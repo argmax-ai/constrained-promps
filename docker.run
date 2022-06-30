@@ -1,0 +1,5 @@
+docker run \
+    -u $(id -u ${USER}):$(id -g ${USER}) \
+    --mount type=bind,source=${1:-`pwd`/cpmp-exp-output},target=/src/cpmp/quant_experiment/output \
+    -w /src/cpmp/quant_experiment \
+    -it constrained-promps:latest /bin/zsh
